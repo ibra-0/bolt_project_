@@ -90,7 +90,7 @@ export function useRoomChecker(): RoomCheckerResult {
 
   const updateNow = useCallback((raw: string) => {
     const n = parseTimeInput(raw);
-    if (n !== null && n >= 0 && n <= 1440) {
+    if (n !== null && n >= 0 && n <= 1439) {
       setRoom((prev) => {
         const next = cloneRoom(prev);
         next.now = n;
