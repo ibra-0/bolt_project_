@@ -1,0 +1,26 @@
+$ npm run test
+Execution date: 2026-11-17 15:36:06 UTC
+Working dir: /home/project
+Node: v22.23.1
+npm: 10.9.8
+----------------------------------------
+
+> vite-react-typescript-starter@0.0.0 test
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.1.0 [39m[90m/home/project[39m
+
+ [32m✓[39m src/utils/time.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m src/utils/time.risk.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m40 passed[39m[22m[90m (40)[39m
+[2m   Start at [22m 15:36:07
+[2m   Duration [22m 1.50s[2m (environment 86%, setup 10%, import 1%, tests 1%, transform 1%, worker 1%)[22m
+
+[2m    Isolate [22m [33m2 workers spawned[39m[2m · ~650ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~650ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+----------------------------------------
+EXIT_CODE=0
