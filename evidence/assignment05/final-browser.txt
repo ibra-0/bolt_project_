@@ -1,0 +1,13 @@
+Final overlap rejection and mobile width check passed: {"scroll":402,"viewport":402}
+{
+  "phase": "final",
+  "inputs": [
+    "11:00",
+    "12:00"
+  ],
+  "quickAvailable": 1,
+  "repeatAvailable": 1,
+  "invalid": 0,
+  "startAccessible": 1,
+  "pageErrors": []
+}

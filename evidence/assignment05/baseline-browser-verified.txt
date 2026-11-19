@@ -1,0 +1,12 @@
+{
+  "phase": "baseline",
+  "inputs": [
+    "11:00 AM",
+    "12:00 PM"
+  ],
+  "quickAvailable": 1,
+  "repeatAvailable": 0,
+  "invalid": 2,
+  "startAccessible": 0,
+  "pageErrors": []
+}

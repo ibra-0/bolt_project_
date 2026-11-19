@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "npm",
+    "audit",
+    "--json",
+    "--fetch-retries=0",
+    "--fetch-timeout=10000",
+    "--cache",
+    "/private/tmp/assignment05-npm-cache"
+  ],
+  "cwd": "/Users/macbook/Documents/ChatGPT/\u0443\u0447\u0435\u0431\u0430/assignment05-repo",
+  "started_utc": "2026-11-19T06:57:07.210618+00:00",
+  "ended_utc": "2026-11-19T06:57:37.592128+00:00",
+  "exit_code": 1,
+  "output": "evidence/final-audit.txt"
+}

@@ -12,7 +12,7 @@ import {
   Building2,
   Timer,
 } from 'lucide-react';
-import { minutesToLabel } from '@/utils/time';
+import { minutesToInput, minutesToLabel } from '@/utils/time';
 import { QUICK_SLOTS } from '@/fixtures';
 import { useRoomChecker } from '@/hooks/useRoomChecker';
 
@@ -56,6 +56,7 @@ function App() {
           </div>
           <button
             onClick={() => setShowSettings(!showSettings)}
+            aria-label="Mock Settings"
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
               showSettings
                 ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
@@ -118,11 +119,12 @@ function App() {
 
             {/* Current time */}
             <div>
-              <label className="text-xs font-medium text-slate-600 mb-1.5 block">Current time (mock)</label>
+              <label htmlFor="mock-now" className="text-xs font-medium text-slate-600 mb-1.5 block">Current time (mock)</label>
               <div className="flex gap-2">
                 <input
+                  id="mock-now"
                   type="text"
-                  defaultValue={minutesToLabel(room.now)}
+                  defaultValue={minutesToInput(room.now)}
                   onChange={(e) => updateNow(e.target.value)}
                   placeholder="HH:MM or minutes"
                   className="flex-1 px-3 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -133,7 +135,7 @@ function App() {
 
             {/* Existing bookings */}
             <div>
-              <label className="text-xs font-medium text-slate-600 mb-2 block">Existing bookings</label>
+              <p className="text-xs font-medium text-slate-600 mb-2 block">Existing bookings</p>
               <div className="space-y-2">
                 {sortedBookings.length === 0 && (
                   <p className="text-xs text-slate-400 italic">No existing bookings.</p>
@@ -160,14 +162,18 @@ function App() {
 
               {/* Add booking */}
               <div className="flex gap-2 mt-3">
+                <label htmlFor="booking-start" className="sr-only">Booking start time</label>
                 <input
+                  id="booking-start"
                   type="text"
                   value={newBookingStart}
                   onChange={(e) => setNewBookingStart(e.target.value)}
                   placeholder="Start"
                   className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+                <label htmlFor="booking-end" className="sr-only">Booking end time</label>
                 <input
+                  id="booking-end"
                   type="text"
                   value={newBookingEnd}
                   onChange={(e) => setNewBookingEnd(e.target.value)}
@@ -194,8 +200,9 @@ function App() {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="text-xs font-medium text-slate-600 mb-1.5 block">Start Time</label>
+              <label htmlFor="slot-start" className="text-xs font-medium text-slate-600 mb-1.5 block">Start Time</label>
               <input
+                id="slot-start"
                 type="text"
                 value={startTime}
                 onChange={(e) => setStartTime(e.target.value)}
@@ -204,8 +211,9 @@ function App() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-slate-600 mb-1.5 block">End Time</label>
+              <label htmlFor="slot-end" className="text-xs font-medium text-slate-600 mb-1.5 block">End Time</label>
               <input
+                id="slot-end"
                 type="text"
                 value={endTime}
                 onChange={(e) => setEndTime(e.target.value)}

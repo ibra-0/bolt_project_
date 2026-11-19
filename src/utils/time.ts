@@ -10,6 +10,10 @@ export type CheckOutcome =
   | { available: true }
   | { available: false; reason: string };
 
+// Adapt whole-minute domain values for editable HH:MM fields, not display labels.
+export const minutesToInput = (mins: number): string =>
+  `${Math.floor(mins / 60).toString().padStart(2, '0')}:${(mins % 60).toString().padStart(2, '0')}`;
+
 export const minutesToLabel = (mins: number): string => {
   const h = Math.floor(mins / 60);
   const m = mins % 60;

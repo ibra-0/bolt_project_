@@ -17,7 +17,8 @@ login, or booking creation — availability checks only.
 ## Setup
 
 ```bash
-npm install
+# Verified: Node 26.13.0 / npm 11.20.0 (macOS arm64)
+npm ci --ignore-scripts
 ```
 
 ## Scripts
@@ -37,6 +38,9 @@ npm run preview    # preview the production build locally
 - `src/utils/time.ts` — pure time-parsing and availability logic.
 - `src/utils/time.test.ts` — AC1–AC6 + fixture immutability tests.
 - `src/utils/time.risk.test.ts` — risk regressions for malformed inputs.
+- `src/utils/time.input.test.ts` — editable-time adapter round trips.
+- `src/hooks/useRoomChecker.test.ts` — quick-slot/recheck regressions.
+- `src/App.test.tsx` — accessible field-name regressions.
 - `src/hooks/useRoomChecker.ts` — React state hook wiring logic to the UI.
 - `src/fixtures.ts` — fictional default room and quick slots.
 - `src/App.tsx` — the UI.
@@ -45,3 +49,11 @@ npm run preview    # preview the production build locally
 
 - This app uses fictional data only. No Supabase/backend is required.
 - Safe-agent rules and human review gates live in `AGENTS.md`.
+- Use a Node version compatible with the lockfile engine requirements. The
+  verified installation leaves `package.json` and `package-lock.json` unchanged.
+- Editable times accept 24-hour HH:MM or whole minutes; AM/PM is display-only.
+- `evidence/*.txt` are historical Practice #10 logs, not Assignment #05 evidence.
+  New logs and audit notes are under `evidence/assignment05/` and
+  `docs/assignment05/`. A passing build does not clear dependency audit findings.
+- No deployment is performed for this assignment. Review the release decision
+  and remaining risks before approving any merge or wider release.

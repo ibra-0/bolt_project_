@@ -1,0 +1,13 @@
+
+> vite-react-typescript-starter@0.0.0 build
+> vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 1567 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.71 kB │ gzip:  0.39 kB
+dist/assets/index-Dbt6xfJK.css   15.22 kB │ gzip:  3.58 kB
+dist/assets/index-7pnLAkZx.js   157.38 kB │ gzip: 50.62 kB
+✓ built in 1.02s

@@ -1,0 +1,13 @@
+
+> vite-react-typescript-starter@0.0.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/macbook/Documents/ChatGPT/учеба/assignment05-repo
+
+
+ Test Files  5 passed (5)
+      Tests  56 passed (56)
+   Start at  11:45:06
+   Duration  1.41s (environment 84%, setup 7%, tests 3%, transform 3%, import 2%, worker 1%)
+

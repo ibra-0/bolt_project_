@@ -3,7 +3,7 @@ import {
   type Booking,
   type RoomState,
   checkAvailability,
-  minutesToLabel,
+  minutesToInput,
   parseTimeInput,
 } from '@/utils/time';
 import { DEFAULT_ROOM, cloneRoom } from '@/fixtures';
@@ -71,8 +71,8 @@ export function useRoomChecker(): RoomCheckerResult {
 
   const handleQuickSlot = useCallback(
     (s: number, e: number) => {
-      setStartTimeState(minutesToLabel(s));
-      setEndTimeState(minutesToLabel(e));
+      setStartTimeState(minutesToInput(s));
+      setEndTimeState(minutesToInput(e));
       const outcome = checkAvailability(s, e, room);
       setResult(outcomeToResult(outcome));
     },

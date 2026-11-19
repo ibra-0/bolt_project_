@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "node",
+    "/Users/macbook/Documents/ChatGPT/\u0443\u0447\u0435\u0431\u0430/Assignment_05_Ibrakhim_Razyyev/browser_evidence.cjs",
+    "baseline"
+  ],
+  "cwd": "/Users/macbook/Documents/ChatGPT/\u0443\u0447\u0435\u0431\u0430/assignment05-repo",
+  "started_utc": "2026-11-19T06:40:36.361239+00:00",
+  "ended_utc": "2026-11-19T06:40:36.530756+00:00",
+  "exit_code": 1,
+  "output": "evidence/baseline-browser.txt"
+}
