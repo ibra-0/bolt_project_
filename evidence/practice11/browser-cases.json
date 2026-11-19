@@ -1,0 +1,132 @@
+{
+  "results": [
+    {
+      "scenario": "available",
+      "expectedStatus": "AVAILABLE",
+      "observedStatus": "AVAILABLE",
+      "expectedExplanation": "Mock-generated explanation",
+      "observedOutput": "Mock-generated explanation\n\nRoom 101 is available for the selected time. This check does not create a booking.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "01-available.png"
+    },
+    {
+      "scenario": "overlap",
+      "expectedStatus": "UNAVAILABLE",
+      "observedStatus": "UNAVAILABLE",
+      "expectedExplanation": "Mock-generated explanation",
+      "observedOutput": "Mock-generated explanation\n\nThe selected time overlaps an existing fictional booking. Choose a different slot.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "02-overlap.png"
+    },
+    {
+      "scenario": "blocked",
+      "expectedStatus": "UNAVAILABLE",
+      "observedStatus": "UNAVAILABLE",
+      "expectedExplanation": "Mock-generated explanation",
+      "observedOutput": "Mock-generated explanation\n\nRoom 101 is marked as blocked, so this request is unavailable.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "03-blocked.png"
+    },
+    {
+      "scenario": "invalid-time",
+      "expectedStatus": "UNAVAILABLE",
+      "observedStatus": "UNAVAILABLE",
+      "expectedExplanation": "Deterministic fallback (input)",
+      "observedOutput": "Deterministic fallback (input)\n\nThe time input is invalid. Please enter HH:MM or whole minutes and check again.\n\nLocal elapsed time: 0 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "04-invalid-time.png"
+    },
+    {
+      "scenario": "past-time",
+      "expectedStatus": "UNAVAILABLE",
+      "observedStatus": "UNAVAILABLE",
+      "expectedExplanation": "Mock-generated explanation",
+      "observedOutput": "Mock-generated explanation\n\nThe selected start is not after the current mock time. Choose a future start time.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "05-past-time.png"
+    },
+    {
+      "scenario": "empty-input",
+      "expectedStatus": "UNAVAILABLE",
+      "observedStatus": "UNAVAILABLE",
+      "expectedExplanation": "Deterministic fallback (input)",
+      "observedOutput": "Deterministic fallback (input)\n\nThe time input is invalid. Please enter HH:MM or whole minutes and check again.\n\nLocal elapsed time: 0 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "06-empty-input.png"
+    },
+    {
+      "scenario": "long-input",
+      "expectedStatus": "UNAVAILABLE",
+      "observedStatus": "UNAVAILABLE",
+      "expectedExplanation": "Deterministic fallback (input)",
+      "observedOutput": "Deterministic fallback (input)\n\nThe time input is invalid. Please enter HH:MM or whole minutes and check again.\n\nLocal elapsed time: 0 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "07-long-input.png"
+    },
+    {
+      "scenario": "timeout",
+      "expectedStatus": "AVAILABLE",
+      "observedStatus": "AVAILABLE",
+      "expectedExplanation": "Deterministic fallback (timeout)",
+      "observedOutput": "Deterministic fallback (timeout)\n\nRoom 101 is available for the selected time. This check does not create a booking.\n\nLocal elapsed time: 703 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "08-timeout.png"
+    },
+    {
+      "scenario": "api-failure",
+      "expectedStatus": "AVAILABLE",
+      "observedStatus": "AVAILABLE",
+      "expectedExplanation": "Deterministic fallback (unavailable)",
+      "observedOutput": "Deterministic fallback (unavailable)\n\nRoom 101 is available for the selected time. This check does not create a booking.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "09-api-failure.png"
+    },
+    {
+      "scenario": "missing-key",
+      "expectedStatus": "AVAILABLE",
+      "observedStatus": "AVAILABLE",
+      "expectedExplanation": "Deterministic fallback (unavailable)",
+      "observedOutput": "Deterministic fallback (unavailable)\n\nRoom 101 is available for the selected time. This check does not create a booking.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "10-missing-key.png"
+    },
+    {
+      "scenario": "malformed-output",
+      "expectedStatus": "AVAILABLE",
+      "observedStatus": "AVAILABLE",
+      "expectedExplanation": "Deterministic fallback (output)",
+      "observedOutput": "Deterministic fallback (output)\n\nRoom 101 is available for the selected time. This check does not create a booking.\n\nLocal elapsed time: 161 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "11-malformed-output.png"
+    },
+    {
+      "scenario": "contradictory-output",
+      "expectedStatus": "AVAILABLE",
+      "observedStatus": "AVAILABLE",
+      "expectedExplanation": "Deterministic fallback (output)",
+      "observedOutput": "Deterministic fallback (output)\n\nRoom 101 is available for the selected time. This check does not create a booking.\n\nLocal elapsed time: 162 ms · Provider calls: 0 · API cost: $0",
+      "unchanged": true,
+      "pass": true,
+      "screenshot": "12-contradictory-output.png"
+    }
+  ],
+  "mobile": {
+    "scroll": 402,
+    "viewport": 402
+  },
+  "pageErrors": [],
+  "networkHosts": [
+    "127.0.0.1"
+  ]
+}

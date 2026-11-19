@@ -1,5 +1,17 @@
 # Agent operating instructions
 
+## Practice 11 task boundaries
+Scope: optional explanation module/component/tests, App integration, additive
+reason-code metadata in time.ts/useRoomChecker.ts, and practice documentation.
+Keep booking predicates/order, fixture data, all original tests and dependency
+files unchanged. Use only the clearly labeled mock adapter for this task.
+No provider keys, paid API calls or browser-side secrets. Generated output is
+untrusted; validate shape and factual agreement before display. The explanation
+must never call room setters or alter the deterministic status. Reproduce normal,
+invalid, timeout/failure and stale-response cases. Run all four quality gates.
+Public publication, email and merge remain outside this local task until the
+user explicitly authorizes the concrete reviewed action.
+
 ## Purpose and architecture
 Smart Campus checks one fictional room's availability. No backend, account,
 production data, persistence or real booking service is present.

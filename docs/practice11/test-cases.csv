@@ -1,0 +1,61 @@
+scenario,expected_status,observed_status,expected_explanation,observed_output,result,screenshot
+available,AVAILABLE,AVAILABLE,Mock-generated explanation,"Mock-generated explanation
+
+Room 101 is available for the selected time. This check does not create a booking.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,01-available.png
+overlap,UNAVAILABLE,UNAVAILABLE,Mock-generated explanation,"Mock-generated explanation
+
+The selected time overlaps an existing fictional booking. Choose a different slot.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,02-overlap.png
+blocked,UNAVAILABLE,UNAVAILABLE,Mock-generated explanation,"Mock-generated explanation
+
+Room 101 is marked as blocked, so this request is unavailable.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,03-blocked.png
+invalid-time,UNAVAILABLE,UNAVAILABLE,Deterministic fallback (input),"Deterministic fallback (input)
+
+The time input is invalid. Please enter HH:MM or whole minutes and check again.
+
+Local elapsed time: 0 ms · Provider calls: 0 · API cost: $0",PASS,04-invalid-time.png
+past-time,UNAVAILABLE,UNAVAILABLE,Mock-generated explanation,"Mock-generated explanation
+
+The selected start is not after the current mock time. Choose a future start time.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,05-past-time.png
+empty-input,UNAVAILABLE,UNAVAILABLE,Deterministic fallback (input),"Deterministic fallback (input)
+
+The time input is invalid. Please enter HH:MM or whole minutes and check again.
+
+Local elapsed time: 0 ms · Provider calls: 0 · API cost: $0",PASS,06-empty-input.png
+long-input,UNAVAILABLE,UNAVAILABLE,Deterministic fallback (input),"Deterministic fallback (input)
+
+The time input is invalid. Please enter HH:MM or whole minutes and check again.
+
+Local elapsed time: 0 ms · Provider calls: 0 · API cost: $0",PASS,07-long-input.png
+timeout,AVAILABLE,AVAILABLE,Deterministic fallback (timeout),"Deterministic fallback (timeout)
+
+Room 101 is available for the selected time. This check does not create a booking.
+
+Local elapsed time: 703 ms · Provider calls: 0 · API cost: $0",PASS,08-timeout.png
+api-failure,AVAILABLE,AVAILABLE,Deterministic fallback (unavailable),"Deterministic fallback (unavailable)
+
+Room 101 is available for the selected time. This check does not create a booking.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,09-api-failure.png
+missing-key,AVAILABLE,AVAILABLE,Deterministic fallback (unavailable),"Deterministic fallback (unavailable)
+
+Room 101 is available for the selected time. This check does not create a booking.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,10-missing-key.png
+malformed-output,AVAILABLE,AVAILABLE,Deterministic fallback (output),"Deterministic fallback (output)
+
+Room 101 is available for the selected time. This check does not create a booking.
+
+Local elapsed time: 161 ms · Provider calls: 0 · API cost: $0",PASS,11-malformed-output.png
+contradictory-output,AVAILABLE,AVAILABLE,Deterministic fallback (output),"Deterministic fallback (output)
+
+Room 101 is available for the selected time. This check does not create a booking.
+
+Local elapsed time: 162 ms · Provider calls: 0 · API cost: $0",PASS,12-contradictory-output.png

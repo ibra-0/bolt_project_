@@ -6,9 +6,11 @@ export interface RoomState {
   existing: Booking[];
 }
 
+export type ReasonCode = 'AVAILABLE' | 'BLOCKED' | 'INVALID_TIME' | 'INVALID_INPUT' | 'PAST_TIME' | 'TOO_LONG' | 'OVERLAP';
+
 export type CheckOutcome =
   | { available: true }
-  | { available: false; reason: string };
+  | { available: false; reason: string; reasonCode: Exclude<ReasonCode, 'AVAILABLE'> };
 
 // Adapt whole-minute domain values for editable HH:MM fields, not display labels.
 export const minutesToInput = (mins: number): string =>
@@ -89,23 +91,23 @@ export const checkAvailability = (
   room: RoomState
 ): CheckOutcome => {
   const blocked = blockedCheck(room.blocked);
-  if (blocked) return { available: false, reason: blocked };
+  if (blocked) return { available: false, reason: blocked, reasonCode: 'BLOCKED' };
 
   if (!Number.isSafeInteger(room.now) || room.now < 0 || room.now > 1439) {
-    return { available: false, reason: 'Current mock time is invalid.' };
+    return { available: false, reason: 'Current mock time is invalid.', reasonCode: 'INVALID_TIME' };
   }
 
   const bounds = validateTimeBounds(start, end);
-  if (bounds) return { available: false, reason: bounds };
+  if (bounds) return { available: false, reason: bounds, reasonCode: 'INVALID_TIME' };
 
   const future = isFutureCheck(start, room.now);
-  if (future) return { available: false, reason: future };
+  if (future) return { available: false, reason: future, reasonCode: 'PAST_TIME' };
 
   const dur = durationCheck(start, end);
-  if (dur) return { available: false, reason: dur };
+  if (dur) return { available: false, reason: dur, reasonCode: 'TOO_LONG' };
 
   const overlap = overlapCheck(start, end, room.existing);
-  if (overlap) return { available: false, reason: overlap };
+  if (overlap) return { available: false, reason: overlap, reasonCode: 'OVERLAP' };
 
   return { available: true };
 };

@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "cwd": "/Users/macbook/Documents/ChatGPT/\u0443\u0447\u0435\u0431\u0430/practice11-repo",
+  "started_utc": "2026-11-19T16:26:29.998612+00:00",
+  "ended_utc": "2026-11-19T16:26:34.391442+00:00",
+  "exit_code": 0,
+  "output": "evidence/baseline-build.txt"
+}

@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import {
   type Booking,
   type RoomState,
+  type CheckOutcome,
   checkAvailability,
   minutesToInput,
   parseTimeInput,
@@ -15,7 +16,7 @@ export interface RoomCheckerResult {
   parsedStart: number | null;
   parsedEnd: number | null;
   inputError: string | null;
-  result: { available: boolean; reason?: string } | null;
+  result: CheckOutcome | null;
   sortedBookings: Booking[];
   setStartTime: (v: string) => void;
   setEndTime: (v: string) => void;
@@ -27,16 +28,11 @@ export interface RoomCheckerResult {
   removeBooking: (idx: number) => void;
 }
 
-const outcomeToResult = (
-  outcome: ReturnType<typeof checkAvailability>
-): { available: boolean; reason?: string } =>
-  outcome.available ? { available: true } : { available: false, reason: outcome.reason };
-
 export function useRoomChecker(): RoomCheckerResult {
   const [room, setRoom] = useState<RoomState>(DEFAULT_ROOM);
   const [startTime, setStartTimeState] = useState('09:30');
   const [endTime, setEndTimeState] = useState('10:00');
-  const [result, setResult] = useState<{ available: boolean; reason?: string } | null>(null);
+  const [result, setResult] = useState<CheckOutcome | null>(null);
 
   const parsedStart = parseTimeInput(startTime);
   const parsedEnd = parseTimeInput(endTime);
@@ -62,11 +58,12 @@ export function useRoomChecker(): RoomCheckerResult {
       setResult({
         available: false,
         reason: inputError ?? 'Please enter valid times.',
+        reasonCode: 'INVALID_INPUT',
       });
       return;
     }
     const outcome = checkAvailability(parsedStart, parsedEnd, room);
-    setResult(outcomeToResult(outcome));
+    setResult(outcome);
   }, [parsedStart, parsedEnd, inputError, room]);
 
   const handleQuickSlot = useCallback(
@@ -74,7 +71,7 @@ export function useRoomChecker(): RoomCheckerResult {
       setStartTimeState(minutesToInput(s));
       setEndTimeState(minutesToInput(e));
       const outcome = checkAvailability(s, e, room);
-      setResult(outcomeToResult(outcome));
+      setResult(outcome);
     },
     [room]
   );

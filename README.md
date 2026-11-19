@@ -57,3 +57,30 @@ npm run preview    # preview the production build locally
   `docs/assignment05/`. A passing build does not clear dependency audit findings.
 - No deployment is performed for this assignment. Review the release decision
   and remaining risks before approving any merge or wider release.
+
+## Practice 11 - Explain availability
+
+After checking a slot, select **Explain availability** for an optional explanation.
+This version is explicitly **MOCK MODE**: no provider, API key, external request,
+login or database. Confirmed availability is always decided by the existing
+checker. Structured reason codes are additive metadata; the booking conditions
+and their order are unchanged.
+
+- `src/features/explanation.ts`: five-field request contract, strict response
+  validation, closed-vocabulary factual guard, deadline/cancellation and fallback.
+- `src/components/AvailabilityExplanation.tsx`: optional button, labeled mock
+  failure simulations, polite live feedback and local timing/cost display.
+- Corresponding test files: normal/failure cases, input/output safety, agreement,
+  cancellation and UI status preservation.
+- `docs/practice11/`: feature contract, three-prompt comparison, review and limits.
+
+Use the **Mock scenario** selector to reproduce timeout, API failure, unavailable
+key, malformed output or contradictory output. All failures fall back to wording
+derived from the deterministic reason code. Input changes clear the explanation.
+Mock output is not proof of real-provider prompt quality, latency or cost.
+
+For a future real model, add a reviewed server-side adapter with server-held
+keys, request revalidation, budget/rate limits and factual checks. Never add a
+VITE API key or call a paid provider directly from the browser. The current
+system-instruction constant is a contract specification; mock mode does not
+interpret natural-language prompts.

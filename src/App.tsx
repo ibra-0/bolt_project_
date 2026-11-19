@@ -15,6 +15,7 @@ import {
 import { minutesToInput, minutesToLabel } from '@/utils/time';
 import { QUICK_SLOTS } from '@/fixtures';
 import { useRoomChecker } from '@/hooks/useRoomChecker';
+import AvailabilityExplanation from '@/components/AvailabilityExplanation';
 
 function App() {
   const {
@@ -280,7 +281,7 @@ function App() {
                 >
                   {result.available ? 'AVAILABLE' : 'UNAVAILABLE'}
                 </p>
-                {result.reason && (
+                {!result.available && result.reason && (
                   <p className="text-sm text-slate-600 mt-1">{result.reason}</p>
                 )}
                 {result.available && parsedStart !== null && parsedEnd !== null && (
@@ -291,6 +292,14 @@ function App() {
               </div>
             </div>
           </div>
+        )}
+
+        {result && (
+          <AvailabilityExplanation
+            key={JSON.stringify([startTime, endTime, room, result])}
+            request={{ roomLabel: 'Room 101', startTime, endTime, isAvailable: result.available,
+              reasonCode: result.available ? 'AVAILABLE' : result.reasonCode }}
+          />
         )}
 
         {/* Footer info */}

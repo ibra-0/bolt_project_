@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "npm",
+    "run",
+    "test"
+  ],
+  "cwd": "/Users/macbook/Documents/ChatGPT/\u0443\u0447\u0435\u0431\u0430/practice11-repo",
+  "started_utc": "2026-11-19T16:30:31.733705+00:00",
+  "ended_utc": "2026-11-19T16:30:34.509887+00:00",
+  "exit_code": 0,
+  "output": "evidence/final-test.txt"
+}

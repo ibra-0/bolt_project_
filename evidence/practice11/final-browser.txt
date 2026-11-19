@@ -1,0 +1,12 @@
+{
+  "cases": 12,
+  "passed": 12,
+  "mobile": {
+    "scroll": 402,
+    "viewport": 402
+  },
+  "pageErrors": [],
+  "networkHosts": [
+    "127.0.0.1"
+  ]
+}
