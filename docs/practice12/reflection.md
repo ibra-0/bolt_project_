@@ -9,7 +9,9 @@ review is still required.
 The most useful verification compared visible status and reason codes, not only
 API responses. It found that the low-code widget initially rendered an object
 instead of a message; a native JSONata binding repaired it. A harness race was
-also corrected so AVAILABLE could not be confused with UNAVAILABLE. Both final
+also corrected so AVAILABLE could not be confused with UNAVAILABLE. A fresh
+mobile client exposed an omitted unchecked-checkbox value, repaired by normalizing
+it to false before validation. Both final
 interfaces passed the same eight cases without changing booking definitions.
 
 Security findings were kept proportional to evidence: validation tests are not

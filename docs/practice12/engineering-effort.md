@@ -9,12 +9,15 @@ work/tool waits; initial prompt drafting before the first code file write was
 not timed. The code implementation end marker was logged late while low-code
 work proceeded; the first successful code-final gate is the stronger completion
 evidence. Debugging intervals include a Python flow-generator syntax error and
-the real [object Object] dashboard binding defect. These intervals overlap
+the real [object Object] dashboard binding defect. A later fresh mobile-client
+check exposed an omitted/null unchecked checkbox; its normalization repair is
+recorded in a third debugging window. These intervals overlap
 implementation/testing and must not be summed as independent labor time.
 
 The first browser harness also matched AVAILABLE within UNAVAILABLE and could
 capture a stale T7 label. It was tightened to exact delimited reason codes and
-explicit visible status; final-comparison-browser.txt is authoritative. The
+explicit visible status. The final release-comparison-browser.txt also requires
+AVAILABLE on a fresh mobile client and is authoritative. The
 earlier optimistic API/partial UI result is not the final UI evidence.
 
 Report measured intervals separately and label unmeasured planning time. They

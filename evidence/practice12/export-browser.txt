@@ -1,0 +1,1 @@
+{"offlineAvailable":true,"sourceFiles":46,"pageErrors":[],"testResultsImage":"Rendered captured log summary"}

@@ -8,7 +8,9 @@ visual editor was inspected. No claim of manual drag-and-drop authoring is made.
 Native ui-form provides start, numeric duration and blocked controls; Change
 provides fixed context and rejection outputs; Switch nodes handle blocked/future
 branches; three small Function nodes normalize input, check overlap and assemble
-the result. A native JSONata text binding displays decision/code/message. This
+the result. The input adapter normalizes an absent/null unchecked checkbox to
+false; the code-based checkbox sends false explicitly. A native JSONata text
+binding displays decision/code/message. This
 is low-code, not no-code. The local HTTP test input enters the same workflow.
 
 Restore this folder, run npm ci --ignore-scripts, then:
