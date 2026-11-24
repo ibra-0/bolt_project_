@@ -1,0 +1,244 @@
+{
+  "code": [
+    {
+      "id": "T1",
+      "name": "Valid free interval",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "available": true,
+      "pass": true,
+      "visible": "AVAILABLE\n\nRoom 101 is available for this interval.\n\nReason code: AVAILABLE"
+    },
+    {
+      "id": "T2",
+      "name": "Overlapping interval",
+      "expected": "OVERLAP",
+      "observed": "OVERLAP",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE\n\nThis slot overlaps with an existing booking (10:00 AM – 11:00 AM).\n\nReason code: OVERLAP"
+    },
+    {
+      "id": "T3",
+      "name": "Blocked room",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE\n\nThe room is currently marked as blocked — no requests can be accepted.\n\nReason code: BLOCKED"
+    },
+    {
+      "id": "T4",
+      "name": "Zero duration",
+      "expected": "INVALID_DURATION",
+      "observed": "INVALID_DURATION",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE\n\nDuration must be a whole number from 1 to 120 minutes.\n\nReason code: INVALID_DURATION"
+    },
+    {
+      "id": "T5",
+      "name": "121-minute duration",
+      "expected": "INVALID_DURATION",
+      "observed": "INVALID_DURATION",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE\n\nDuration must be a whole number from 1 to 120 minutes.\n\nReason code: INVALID_DURATION"
+    },
+    {
+      "id": "T6",
+      "name": "Past start",
+      "expected": "PAST_TIME",
+      "observed": "PAST_TIME",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE\n\nStart time must be in the future (after 9:00 AM).\n\nReason code: PAST_TIME"
+    },
+    {
+      "id": "T7",
+      "name": "Touching endpoint",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "available": true,
+      "pass": true,
+      "visible": "AVAILABLE\n\nRoom 101 is available for this interval.\n\nReason code: AVAILABLE"
+    },
+    {
+      "id": "T8",
+      "name": "Bookings unchanged after checks",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "available": true,
+      "pass": true,
+      "visible": "AVAILABLE\n\nRoom 101 is available for this interval.\n\nReason code: AVAILABLE"
+    }
+  ],
+  "lowcode": [
+    {
+      "id": "T1",
+      "name": "Valid free interval",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "available": true,
+      "pass": true,
+      "visible": "AVAILABLE | AVAILABLE | Room 101 is available for this interval.",
+      "httpStatus": 200,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T2",
+      "name": "Overlapping interval",
+      "expected": "OVERLAP",
+      "observed": "OVERLAP",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE | OVERLAP | This interval overlaps the existing 10:00-11:00 booking.",
+      "httpStatus": 200,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T3",
+      "name": "Blocked room",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE | BLOCKED | Room 101 is marked as blocked.",
+      "httpStatus": 200,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T4",
+      "name": "Zero duration",
+      "expected": "INVALID_DURATION",
+      "observed": "INVALID_DURATION",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE | INVALID_DURATION | Duration must be a whole number from 1 to 120 minutes.",
+      "httpStatus": 400,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T5",
+      "name": "121-minute duration",
+      "expected": "INVALID_DURATION",
+      "observed": "INVALID_DURATION",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE | INVALID_DURATION | Duration must be a whole number from 1 to 120 minutes.",
+      "httpStatus": 400,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T6",
+      "name": "Past start",
+      "expected": "PAST_TIME",
+      "observed": "PAST_TIME",
+      "available": false,
+      "pass": true,
+      "visible": "UNAVAILABLE | PAST_TIME | Start time must be after the current mock time 09:00.",
+      "httpStatus": 200,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T7",
+      "name": "Touching endpoint",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "available": true,
+      "pass": true,
+      "visible": "AVAILABLE | AVAILABLE | Room 101 is available for this interval.",
+      "httpStatus": 200,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    },
+    {
+      "id": "T8",
+      "name": "Bookings unchanged after checks",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "available": true,
+      "pass": true,
+      "visible": "AVAILABLE | AVAILABLE | Room 101 is available for this interval.",
+      "httpStatus": 200,
+      "bookings": [
+        [
+          600,
+          660
+        ]
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "<img src=x onerror=\"window.__p12=1\">",
+      "code": "INVALID_INPUT",
+      "lowcode": "INVALID_INPUT",
+      "httpStatus": 400,
+      "scriptExecuted": false,
+      "pass": true
+    },
+    {
+      "input": "' OR 1=1 --",
+      "code": "INVALID_INPUT",
+      "lowcode": "INVALID_INPUT",
+      "httpStatus": 400,
+      "scriptExecuted": false,
+      "pass": true
+    },
+    {
+      "input": "10000-character payload",
+      "code": "INVALID_INPUT",
+      "lowcode": "INVALID_INPUT",
+      "httpStatus": 400,
+      "scriptExecuted": false,
+      "pass": true
+    }
+  ],
+  "mobile": {
+    "code": {
+      "width": 402,
+      "scrollWidth": 402
+    },
+    "lowcode": {
+      "width": 402,
+      "scrollWidth": 402
+    }
+  },
+  "pageErrors": [],
+  "lowcodeFlowUnchanged": true
+}

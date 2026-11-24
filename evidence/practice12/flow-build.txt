@@ -1,0 +1,1 @@
+Configured real low-code flow: 18 nodes; actual Node-RED/FlowFuse widgets, switches and changes.

@@ -1,0 +1,30 @@
+LOWCODE_BODY Room 101 availability
+Room 101 availability
+LOW-CODE · Node-RED / FlowFuse Dashboard
+Fixed mock time 09:00 · Booking 10:00-11:00
+* Start time
+* Duration (minutes)
+Room blocked
+Check availability
+Decision (check only; bookings unchanged)
+INPUTS [
+  {
+    type: 'text',
+    value: '',
+    id: 'input-v-5',
+    outer: '<input size="1" type="text" aria-labelledby="input-v-5-label" id="input-v-5" class="v-field__input">'
+  },
+  {
+    type: 'number',
+    value: '',
+    id: 'input-v-8',
+    outer: '<input size="1" type="number" aria-labelledby="input-v-8-label" id="input-v-8" class="v-field__input">'
+  },
+  {
+    type: 'checkbox',
+    value: 'true',
+    id: 'checkbox-v-10',
+    outer: '<input id="checkbox-v-10" aria-disabled="false" aria-label="Room blocked" type="checkbox" value="true">'
+  }
+]
+API 200 {"available":true,"reasonCode":"AVAILABLE","message":"Room 101 is available for this interval.","existingBookings":[[600,660]],"status":"AVAILABLE"}

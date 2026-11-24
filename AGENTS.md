@@ -1,5 +1,14 @@
 # Agent operating instructions
 
+## Practice 12 scope
+Add the start-plus-duration comparison screen under src/practice12; retain the
+old screen and original rule engine/fixtures/tests. Keep app dependency files
+unchanged. A separate low-code workspace may contain pinned Node-RED/FlowFuse
+dependencies and a sanitized flow/settings export. Never export runtime .config
+or credential files. Local Node-RED admin/runtime must bind to 127.0.0.1 only.
+Use identical T1-T8 inputs, preserve failed evidence and separate observed facts
+from timing impressions. Do not claim a simulated builder is a real platform.
+
 ## Practice 11 task boundaries
 Scope: optional explanation module/component/tests, App integration, additive
 reason-code metadata in time.ts/useRoomChecker.ts, and practice documentation.

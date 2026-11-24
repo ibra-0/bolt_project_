@@ -1,0 +1,10 @@
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.nrdb-ui-text').filter({ hasText: 'Decision' }).getByText(/AVAILABLE/) to be visible[22m
+
+    at /Users/macbook/Documents/ChatGPT/учеба/Practice_12_Ibrakhim_Razyyev/compare_browser.cjs:29:55 {
+  log: [
+    "  - waiting for locator('.nrdb-ui-text').filter({ hasText: 'Decision' }).getByText(/AVAILABLE/) to be visible"
+  ],
+  name: 'TimeoutError'
+}

@@ -1,0 +1,7 @@
+node_modules/
+.config*
+.*.backup
+flows_cred.json
+.sessions*
+lib/
+*.log

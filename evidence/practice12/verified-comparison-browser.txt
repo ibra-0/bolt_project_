@@ -1,0 +1,17 @@
+{
+  "code": 8,
+  "lowcode": 8,
+  "security": 3,
+  "lowcodeFlowUnchanged": true,
+  "mobile": {
+    "code": {
+      "width": 402,
+      "scrollWidth": 402
+    },
+    "lowcode": {
+      "width": 402,
+      "scrollWidth": 402
+    }
+  },
+  "pageErrors": []
+}

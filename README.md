@@ -1,5 +1,15 @@
 # Room Availability Checker (Smart Campus — Room 101)
 
+## Practice 12 - code-based versus real low-code
+Open the code-based duration screen at `/#practice12` after starting Vite.
+`src/practice12` reuses the unchanged rule engine with a validated start/duration
+adapter. The previous Practice 11 screen remains the default source route.
+`lowcode/practice12` contains an importable real Node-RED 5.0.10 / FlowFuse
+Dashboard 1.37.0 flow, exact dependency lock and loopback settings. Follow its
+README; no account/subscription is needed. Both implementations use the same
+fixed 09:00 clock and 10:00-11:00 booking. Shared requirements, test cases and
+security/timing limits are under `docs/practice12`.
+
 A small React + TypeScript + Vite app that checks whether a single room is
 available for a requested time slot against fictional/mock data. No backend,
 login, or booking creation — availability checks only.

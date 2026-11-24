@@ -1,0 +1,35 @@
+Room 101 availability
+Room 101 availability
+LOW-CODE · Node-RED / FlowFuse Dashboard
+Fixed mock time 09:00 · Booking 10:00-11:00
+* Start time
+* Duration (minutes)
+Room blocked
+Check availability
+Decision (check only; bookings unchanged)
+[object Object]
+App is offline ready
+Close
+[
+  {
+    class: 'v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--nrdb v-locale--is-ltr v-input--dirty v-text-field nrdb-ui-widget nrdb-ui-text-field',
+    text: '* Start time* Start time'
+  },
+  {
+    class: 'v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--nrdb v-locale--is-ltr v-input--dirty v-text-field nrdb-ui-widget nrdb-ui-text-field',
+    text: '* Duration (minutes)* Duration (minutes)'
+  },
+  {
+    class: 'nrdb-ui-widget nrdb-ui-text',
+    text: 'Decision (check only; bookings unchanged)[object Object]'
+  },
+  {
+    class: 'nrdb-ui-text nrdb-ui-text--col-center nrdb-ui-text--wrap',
+    text: 'Decision (check only; bookings unchanged)[object Object]'
+  },
+  {
+    class: 'nrdb-ui-text-label',
+    text: 'Decision (check only; bookings unchanged)'
+  },
+  { class: 'nrdb-ui-text-value', text: '[object Object]' }
+]

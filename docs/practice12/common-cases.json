@@ -1,0 +1,10 @@
+[
+ {"id":"T1","name":"Valid free interval","input":{"startTime":"12:00","duration":30,"blocked":false},"available":true,"reasonCode":"AVAILABLE"},
+ {"id":"T2","name":"Overlapping interval","input":{"startTime":"10:30","duration":30,"blocked":false},"available":false,"reasonCode":"OVERLAP"},
+ {"id":"T3","name":"Blocked room","input":{"startTime":"12:00","duration":30,"blocked":true},"available":false,"reasonCode":"BLOCKED"},
+ {"id":"T4","name":"Zero duration","input":{"startTime":"12:00","duration":0,"blocked":false},"available":false,"reasonCode":"INVALID_DURATION"},
+ {"id":"T5","name":"121-minute duration","input":{"startTime":"12:00","duration":121,"blocked":false},"available":false,"reasonCode":"INVALID_DURATION"},
+ {"id":"T6","name":"Past start","input":{"startTime":"08:00","duration":30,"blocked":false},"available":false,"reasonCode":"PAST_TIME"},
+ {"id":"T7","name":"Touching endpoint","input":{"startTime":"11:00","duration":60,"blocked":false},"available":true,"reasonCode":"AVAILABLE"},
+ {"id":"T8","name":"Bookings unchanged after checks","input":{"startTime":"11:00","duration":60,"blocked":false},"available":true,"reasonCode":"AVAILABLE","bookingsUnchanged":true}
+]

@@ -1,0 +1,1 @@
+Real Node-RED editor captured; optional update telemetry declined. No external account or connector.
